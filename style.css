@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap");
+
+:root {
+  --clr-Nutmeg: hsl(14, 45%, 36%);
+  --clr-darkRaspberry: hsl(332, 51%, 32%);
+  --clr-White: hsl(0, 0%, 100%);
+  --clr-roseWhite: hsl(330, 100%, 98%);
+  --clr-Eggshell: hsl(30, 54%, 90%);
+  --clr-lightGrey: hsl(30, 18%, 87%);
+  --clr-wengeBrown: hsl(30, 10%, 34%);
+  --clr-darkCharcoal: hsl(24, 5%, 18%);
+  --fw-thin: 400;
+  --fw-bold: 600;
+  --fw-ultBold: 700;
+  --ff-headings: "Young Serif", serif;
+  --ff-main: "Outfit", sans-serif;
+  --fs: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+  background-color: var(--clr-roseWhite);
+  font-family: var(--ff-main);
+}
+
+.container {
+  background-color: var(--clr-White);
+  max-width: 767px;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  .body {
+    --space: 35px;
+    padding: 2rem;
+    & > h1,
+    & section h2 {
+      font-family: var(--ff-headings);
+    }
+    & > h1 {
+      font-weight: var(--fw-ultBold);
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: var(--clr-darkCharcoal);
+    }
+    & section h2 {
+      font-size: 28px;
+      color: var(--clr-Nutmeg);
+    }
+    & > p {
+      font-weight: var(--fw-thin);
+      font-size: var(--fs);
+      color: var(--clr-wengeBrown);
+      text-wrap: balance;
+      margin-bottom: var(--space);
+    }
+
+    & .time {
+      background-color: hsla(332, 51%, 32%, 10%);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: var(--space);
+      & h3 {
+        color: var(--clr-darkRaspberry);
+        font-size: 20px;
+      }
+      & li {
+        padding-left: 20px;
+        margin: 15px 0 10px 20px;
+        color: var(--clr-darkCharcoal);
+        &::marker {
+          padding-left: 20px;
+          color: var(--clr-darkRaspberry);
+        }
+        & span {
+          font-weight: var(--fw-ultBold);
+        }
+      }
+    }
+
+    & .ingrediants {
+      & li {
+        margin: 15px 0 10px 1rem;
+        padding-left: 15px;
+        color: var(--clr-wengeBrown);
+        &::marker {
+          color: var(--clr-darkRaspberry);
+        }
+      }
+    }
+
+    & .instructions {
+      border-block: 2px solid var(--clr-lightGrey);
+      margin-top: 40px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      & li {
+        margin: 20px 0 15px 1rem;
+        padding-left: 20px;
+        color: var(--clr-wengeBrown);
+        &::marker {
+          color: var(--clr-darkRaspberry);
+          font-weight: var(--fw-ultBold);
+        }
+        & span {
+          color: var(--clr-darkCharcoal);
+          font-weight: var(--fw-bold);
+        }
+      }
+    }
+
+    & .nutrition {
+      color: var(--clr-wengeBrown);
+      & p {
+        margin: 20px 0;
+      }
+      & .row {
+        padding: 15px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--clr-lightGrey);
+        }
+        & span:last-child {
+          color: var(--clr-Nutmeg);
+          font-weight: var(--fw-bold);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width > 767px) {
+  .container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 2rem;
+    border-radius: 20px;
+    & > img {
+      border-radius: 10px;
+    }
+    .body {
+      padding: 0;
+      & > h1 {
+        font-size: 40px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
